@@ -5,6 +5,8 @@ Each "patient" has an id, fullName, dateOfBirth, and multiple "symptoms".
 Each symptom in a String. 
 */
 
+//Coded by Sri | GitHub URL: https://github.com/Sriva29/a1Programming/tree/main
+
 let hospital = {
     name: "CloudCare Express Hospital",
     patient: [
