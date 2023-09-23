@@ -44,4 +44,36 @@ let hospital = {
 
 /*Part 2:
 Create a function named "showPatients" that receives a hospital data structure and returns the following as a string:
+<h1>Hospital Name</h1>
+<h2>Patient full name, date of birth </h2>
+<ul>
+  <li>symptom</li>
+  <li>symptom</li>
+  <li>symptom</li>
+</ul>
+Repeat the h2, ul, and li for each patient.
+
+Execute that function with the data structure created in Part 1 then console.log the return value to the document.
 */
+
+function showPatients(hospital) {
+    console.log("<h1>" + hospital.name + "</h1>");
+
+    for (let i = 0; i < hospital.patient.length; i++) {
+        console.log("<h2>" + hospital.patient[i].fullName + ", " + hospital.patient[i].dateOfBirth + "</h2>");
+        console.log("<ul>");
+        for (let j = 0; j < hospital.patient.length; j++) {
+            
+            console.log("<li>" + hospital.patient[i].symptoms[j] + "</li>");
+            
+        }
+        console.log("</ul>");
+
+    }
+
+
+
+
+}
+
+showPatients(hospital);
