@@ -35,7 +35,8 @@ let hospital = {
             symptoms: [
                 "sniffles",
                 "headache",
-                "shivers"
+                "shivers",
+                "pessimism"
             ]
         }
     ]
@@ -57,26 +58,23 @@ Execute that function with the data structure created in Part 1 then console.log
 */
 
 function showPatients(hospital) {
-    console.log("<h1>" + hospital.name + "</h1>");
+    let returnValue = "<h1>" + hospital.name + "</h1>" + "\n";
 
     for (let i = 0; i < hospital.patient.length; i++) {
-        console.log("<h2>" + hospital.patient[i].fullName + ", " + hospital.patient[i].dateOfBirth + "</h2>");
-        console.log("<ul>");
-        for (let j = 0; j < hospital.patient.length; j++) {
-            
-            console.log("<li>" + hospital.patient[i].symptoms[j] + "</li>");
-            
+        returnValue += "<h2>" + hospital.patient[i].fullName + ", " + hospital.patient[i].dateOfBirth + "</h2>" + "\n";
+        returnValue += "<ul>" + "\n";
+        for (let j = 0; j < hospital.patient[i].symptoms.length; j++) {
+
+            returnValue += "\t" + "<li>" + hospital.patient[i].symptoms[j] + "</li>" + "\n";
+
         }
-        console.log("</ul>");
+        returnValue += "</ul>" + "\n";
 
     }
-
-
-
-
+    return returnValue;
 }
 
-showPatients(hospital);
+console.log(showPatients(hospital));
 
 /*
 Part 3:
@@ -87,11 +85,12 @@ Execute that function then console.log() the return value.
 */
 
 
-let getPatient = function (patients){
-patients = hospital.patient;
-let randomPatientID = hospital.patient[Math.floor(Math.random()*3)].id;
-//let randomPatientID = patients[Math.random()*3].id;
-return randomPatientID;
+let getPatient = function (hospital) {
+    let randomPatientArrayIndex = Math.floor(Math.random()*hospital.patient.length);
+    let randomPatientID = hospital.patient[randomPatientArrayIndex].id;
+    return randomPatientID;
 }
 
-console.log("random patient id: "+ getPatient(hospital));
+let randomPatientID = "random patient id: " + getPatient(hospital);
+
+console.log(randomPatientID);
