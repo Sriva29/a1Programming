@@ -77,3 +77,21 @@ function showPatients(hospital) {
 }
 
 showPatients(hospital);
+
+/*
+Part 3:
+Create another function named "getPatient" that accepts an array of patient records and returns a random patient id.
+
+Execute that function then console.log() the return value.
+
+*/
+
+
+let getPatient = function (patients){
+patients = hospital.patient;
+let randomPatientID = hospital.patient[Math.floor(Math.random()*3)].id;
+//let randomPatientID = patients[Math.random()*3].id;
+return randomPatientID;
+}
+
+console.log("random patient id: "+ getPatient(hospital));
